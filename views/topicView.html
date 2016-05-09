@@ -1,0 +1,27 @@
+{{template "public/T.header.html" .}}
+<title>{{.Topic.Title}}</title>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            {{template "public/T.navbar.html" .}}
+        </div>
+    </div>
+
+    <div class="container">
+        {{with .Topic}}
+        <div class="panel panel-default">
+            <div class="panel-heading">{{.Title}}</div>
+            <div class="panel-body">
+                {{str2html .Content}}
+            </div>
+        </div>
+        {{end}}
+        <div id="uyan_frame"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1973744"></script>
+    </div>
+    {{template "public/T.footer.html"}}
+</body>
+
+</html>
